@@ -1,0 +1,15 @@
+{
+  "name": "iirobower",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.5",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0"
+  },
+  "resolutions": {
+    "angular": "~1.5"
+  }
+}

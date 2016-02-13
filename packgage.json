@@ -1,0 +1,10 @@
+{
+  "name": "iiro-quizer",
+  "version:" "0.1",
+  "devDependencies": {
+    "angular": "latest",
+    "angular-mocks": "latest",
+    "angular-ui-router": "latest",
+    "bootstrap:" "latest"    
+  }
+}
