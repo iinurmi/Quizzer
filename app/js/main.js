@@ -1,21 +1,33 @@
 angular.module('mainApp', [
-	'ui.router'
+	'ui.router',
+	'restangular'
 ]);
 
-angular.module('mainApp').config(function($stateProvider, $urlRouterProvider) {
-  //
-  // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/state1");
+angular.module('mainApp').config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
+  // Set the base URL for Restangular.
+  RestangularProvider.setBaseUrl('http://localhost:3000/api_v1');
+  // For any unmatched url, redirect to /
+  $urlRouterProvider.otherwise("/");
   //
   // Now set up the states
   $stateProvider
-    .state('state1', {
+    .state('/', {
       url: "/",
       templateUrl: "index.html"
     })
-    .state('card', {
-      url: "/card",
+    .state('add-question', {
+      url: "/create/question",
       templateUrl: "quizCard/quiz-card.html"
     });
-    
+});
+
+angular.module('mainApp').factory('QuestionRestangular', function(Restangular) {
+    return Restangular.withConfig(function(RestangularConfigurer) {
+	  RestangularConfigurer.setRestangularFields({
+	    id: '_id'
+	  });
+	});
+});
+angular.module('mainApp').factory('Question', function(QuestionRestangular) {
+	return QuestionRestangular.service('questions');
 });

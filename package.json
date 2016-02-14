@@ -1,0 +1,13 @@
+{
+  "name": "iiroquiz",
+  "description": "Quizzer Application",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "express": "^4.11.0",
+	"mongo-sanitize": "1.0.0",
+	"extend": "3.0.0",
+    "mongoose": "^4.0.6"
+  }
+}

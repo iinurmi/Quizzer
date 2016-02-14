@@ -4,7 +4,8 @@
   "dependencies": {
     "angular": "~1.5",
     "angular-ui-router": "~0.2.15",
-    "bootstrap": "latest"
+    "bootstrap": "latest",
+	"restangular": "~1.4.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

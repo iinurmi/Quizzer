@@ -1,14 +1,12 @@
 'use strict';
 angular
     .module('mainApp')
-    .controller('ExampleCtrl', function($scope) {
-		var questionObj = {
-			question: 'What a fuck?',
-			options: [
-				'yes',
-				'no'
-			],
-			correct_answer: [0]
-		};
+.controller('ExampleCtrl', function($scope, Question, $location) {
+	$scope.question = {};
+	$scope.saveQuestion = function() {
+		Question.post($scope.question).then(function() {
+		  $location.path('/');
+		});
+	};
 
-    });
+});
