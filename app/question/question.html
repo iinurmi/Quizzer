@@ -1,4 +1,3 @@
-
 <form role="form" class="form-horizontal">
 	<div class="form-group">
 		<div class="col-xs-10">
@@ -12,12 +11,12 @@
 		</div>
 		<div ng-repeat="option in question.options track by $index"> 
 			<div class="col-xs-10">
-				<div ng-click="selectAnswer(option)">
-					{{option.option}} <span ng-show="answered" class="glyphicon" ng-class="{'glyphicon-ok': option.is_correct, 'glyphicon-remove': !option.is_correct,}"> </span>
+				<div class="option-container" ng-class="{'is-correct': option.is_correct && answered, 'is-wrong': !option.is_correct && answered}" ng-click="selectAnswer(option)">
+					{{option.option}} <span ng-show="answered" class="glyphicon" ng-class="{'glyphicon-ok': option.is_correct, 'glyphicon-remove': !option.is_correct}"> 
+									  </span>
 				</div>
 				
 			</div>
 		</div>
 	</div>	
-	<input type="submit" class="btn btn-primary" ng-click="" value=""/>
 </form>

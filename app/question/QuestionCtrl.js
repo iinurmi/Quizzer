@@ -11,9 +11,9 @@ angular
 		console.log(answer);
 		$scope.answered = true;
 		if(answer.is_correct){
-			console.log('jeah')
+			console.log('jeah');
 		}else{
-			console.log('shit')
+			console.log('shit');
 		}
 	}
 }]);

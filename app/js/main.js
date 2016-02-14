@@ -32,7 +32,6 @@ angular.module('mainApp').factory('QuestionRestangular', function(Restangular) {
             id: '_id',
             options:'question.options'
         });
-        RestangularConfigurer.setFullResponse(true);
     });
 });
 
