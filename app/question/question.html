@@ -1,0 +1,23 @@
+
+<form role="form" class="form-horizontal">
+	<div class="form-group">
+		<div class="col-xs-10">
+			<label for="title" class="control-label">Question</label>
+			<p id="title">{{question.question}}</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-12">
+			<label for="title" class="control-label">Options</label>
+		</div>
+		<div ng-repeat="option in question.options track by $index"> 
+			<div class="col-xs-10">
+				<div ng-click="selectAnswer(option)">
+					{{option.option}} <span ng-show="answered" class="glyphicon" ng-class="{'glyphicon-ok': option.is_correct, 'glyphicon-remove': !option.is_correct,}"> </span>
+				</div>
+				
+			</div>
+		</div>
+	</div>	
+	<input type="submit" class="btn btn-primary" ng-click="" value=""/>
+</form>

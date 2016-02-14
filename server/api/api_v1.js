@@ -14,8 +14,15 @@ var questionHandlers = require("./route_handlers/question_handler.js");
 
 // question routes
 router.route("/questions")
-	.get(sanitizeBody, questionHandlers.queryAll)
-	.post(sanitizeBody, questionHandlers.create);
+	.get(sanitizeBody, questionHandlers.queryAll);
+
+router.route("/question")
+	.post(sanitizeBody, questionHandlers.create)
+
+router.route("/question/:id")
+	.get(sanitizeBody, questionHandlers.query)
+	.put(sanitizeBody, questionHandlers.update)
+	.delete(sanitizeBody, questionHandlers.delete);
 
 /*
 var userHandlers = require("./route_handlers/user.js");

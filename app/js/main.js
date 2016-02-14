@@ -1,6 +1,6 @@
 angular.module('mainApp', [
-	'ui.router',
-	'restangular'
+    'ui.router',
+    'restangular'
 ]);
 
 angular.module('mainApp').config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
@@ -15,19 +15,24 @@ angular.module('mainApp').config(function($stateProvider, $urlRouterProvider, Re
       url: "/",
       templateUrl: "index.html"
     })
+    .state('question', {
+      url: "/question/:id",
+      templateUrl: "question/question.html",
+      controller:"QuestionCtrl"
+    })
     .state('add-question', {
       url: "/create/question",
-      templateUrl: "quizCard/quiz-card.html"
+      templateUrl: "quizCard/question-create.html"
     });
 });
 
 angular.module('mainApp').factory('QuestionRestangular', function(Restangular) {
-    return Restangular.withConfig(function(RestangularConfigurer) {
-	  RestangularConfigurer.setRestangularFields({
-	    id: '_id'
-	  });
-	});
+    return Restangular.withConfig(function(RestangularConfigurer) { 
+        RestangularConfigurer.setRestangularFields({
+            id: '_id',
+            options:'question.options'
+        });
+        RestangularConfigurer.setFullResponse(true);
+    });
 });
-angular.module('mainApp').factory('Question', function(QuestionRestangular) {
-	return QuestionRestangular.service('questions');
-});
+

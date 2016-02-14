@@ -2,12 +2,11 @@ var mongoose = require('mongoose');
 
 // Create the Question.
 var QuestionSchema = new mongoose.Schema({
-  title: {
+  question: {
     type: String,
     required: true
   },
-  options: [],
-  correct_answer: []
+  options: [{"option":String, is_correct:Boolean}]
 });
 
 // Export the model.
